@@ -1,10 +1,10 @@
-import { enableProdMode, ENVIRONMENT_INITIALIZER, importProvidersFrom, inject } from '@angular/core';
+import { enableProdMode, ENVIRONMENT_INITIALIZER, importProvidersFrom, Inject, inject } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { RouterModule, Routes } from '@angular/router';
 import { firstValueFrom, tap } from 'rxjs';
 import { AppComponent } from './app/app.component';
-import { AuthService } from './app/services';
+import { ProductService } from './app/services';
 import { environment } from './environments/environment';
 
 if (environment.production) {
@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'product',
-    loadComponent: () => import('./app/views/product').then(m => m.ProductComponent)
+    loadChildren: () => import('./app/views/product').then(m => m.routes)
   }
 ];
 
@@ -27,6 +27,9 @@ bootstrapApplication(AppComponent, {
   providers: [importProvidersFrom(RouterModule.forRoot(routes)), {
     provide: ENVIRONMENT_INITIALIZER,
     multi: true,
-    useValue: () => firstValueFrom(inject(AuthService).init().pipe(tap(result => console.log({result}))))
+    useValue: () => {
+      const productService = inject(ProductService);
+      productService.init()
+    }
   }]
 })
