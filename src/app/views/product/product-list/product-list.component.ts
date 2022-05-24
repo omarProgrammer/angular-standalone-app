@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Product } from "src/app/commons";
-import { ProductService } from "src/app/services";
+import { Product } from "@commons";
+import { ProductService } from "@services";
 
 @Component({
   standalone: true,

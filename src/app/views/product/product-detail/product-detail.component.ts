@@ -1,9 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
+import { Product } from "@commons";
+import { ProductService } from "@services";
 import {  first, Observable, pluck, switchMap, tap } from "rxjs";
-import { Product } from "src/app/commons";
-import { ProductService } from "src/app/services";
 
 @Component({
   standalone: true,

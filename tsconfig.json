@@ -21,7 +21,14 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@commons": ["./src/app/commons/index.ts"],
+      "@commons/*": ["./src/app/commons/*"],
+      "@services": ["./src/app/services/index.ts"],
+      "@services/*": ["./src/app/services/*"],
+      "@app/*": ["./src/app/*"],
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
