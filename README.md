@@ -7,3 +7,8 @@ Moreover:
   - Use `Inject` that returns an instance of a given service
 
 ** I will add more Angular V14 features in the same repository ** Keeping in touch
+
+
+## Required
+- Nodejs +16, you can use nvm to switch to recommended node version
+- Angular V14 (next version at this moment)
