@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
-import { Product } from "@commons";
-import { ProductService } from "@services";
+import { Product } from "./../../../commons/models";
+import { ProductService } from "./../../../services/product.service";
 import {  first, Observable, pluck, switchMap, tap } from "rxjs";
 
 @Component({
