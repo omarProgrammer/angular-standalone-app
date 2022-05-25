@@ -12,3 +12,22 @@ Moreover:
 ## Required
 - Nodejs +16, you can use nvm to switch to recommended node version
 - Angular V14 (next version at this moment)
+
+## Install The project
+Execute the following command to install the required dependencies with npm
+```sh
+npm install
+```
+
+## Start The project
+ execute the followinf command  to start the projet on localhost
+ ```sh
+ npm start
+ ```
+
+ ## Other scripts
+ |Task Npm| Script|
+ |-|-|
+ | Build | `npm run build`|
+ | Lint typescript | `npm run lint:ts`|
+ | lint typescript with autofix | `npm run lint:ts:fix`|
